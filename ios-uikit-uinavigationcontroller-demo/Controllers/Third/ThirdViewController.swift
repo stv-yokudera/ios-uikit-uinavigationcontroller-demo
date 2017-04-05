@@ -12,24 +12,14 @@ class ThirdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
         printNavigationConfiguration()
     }
     
-    // 本クラスではbackボタンのtitleを設定しない →デフォルト表示
+    // 本クラスではbackボタンのtitleを設定しない → デフォルト表示
     private func setup() {
         navigationItem.title = "Third"
-        let barButtonItem = UIBarButtonItem(title: "Root",
-                                            style: .plain,
-                                            target: self,
-                                            action: #selector(didTapBarButtonItem))
-        navigationItem.rightBarButtonItem = barButtonItem
-    }
-    
-    @objc private func didTapBarButtonItem() {
-        
-        // RootまでPopする
-        _ = navigationController?.popToRootViewController(animated: true)
     }
 
     private func printNavigationConfiguration() {
@@ -37,4 +27,10 @@ class ThirdViewController: UIViewController {
         print("topViewController = \(navigationController!.topViewController!)")
     }
 
+    @IBAction func didTapPush(_ sender: Any) {
+        // FourthViewControllerにpushする
+        let storyboard = UIStoryboard(name: "FourthViewController", bundle: nil)
+        let fourthViewController = storyboard.instantiateInitialViewController()!
+        navigationController?.pushViewController(fourthViewController, animated: true)
+    }
 }

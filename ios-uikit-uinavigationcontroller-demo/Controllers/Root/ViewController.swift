@@ -33,6 +33,24 @@ extension ViewController: UINavigationControllerDelegate {
     
     fileprivate func setup() {
         navigationController?.delegate = self
+        navigationBarStyle()
+    }
+    
+    /// ナビゲーションバーのデザインを変更する
+    private func navigationBarStyle() {
+        
+        // ナビゲーションバーアイテムの色を変更 (デフォルトは青)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+        
+        // ナビゲーションバーの色を変更
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1)
+        
+        let font = UIFont(name: "HiraMinProN-W3", size: 20) ?? UIFont.systemFont(ofSize: 20)
+        let naviBarTitleAttributes: [String : Any] = [NSForegroundColorAttributeName : #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1),
+                                                      NSFontAttributeName : font]
+        
+        // ナビゲーションバーのタイトルを装飾
+        navigationController?.navigationBar.titleTextAttributes = naviBarTitleAttributes
     }
     
     // 画面遷移直前に呼ばれる
