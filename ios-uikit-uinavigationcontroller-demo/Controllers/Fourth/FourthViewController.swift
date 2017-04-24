@@ -23,7 +23,7 @@ class FourthViewController: UIViewController {
         
         let starImage = #imageLiteral(resourceName: "star").resizableImage(withCapInsets: UIEdgeInsetsMake(5, 5, 5, 5))
         
-        // 画像を使用してUIBarButtonItemを生成（titntColorの影響を受けないようにwithRenderingMode(.alwaysOriginal)を設定）
+        // 画像を使用してUIBarButtonItemを生成（tintColorの影響を受けないようにwithRenderingMode(.alwaysOriginal)を設定）
         let barButtonItem = UIBarButtonItem(image: starImage.withRenderingMode(.alwaysOriginal),
                                             style: .plain,
                                             target: self,
